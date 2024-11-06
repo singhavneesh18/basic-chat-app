@@ -1,0 +1,33 @@
+<html>
+    <header>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+
+            function sendMessage() {
+                var msg = document.getElementById('message').value;
+                console.log(msg)
+                socket.emit('chat-message', msg)
+                document.getElementById('message').value= '';
+            }
+
+            socket.on('chat-message', (msg)=> {
+                console.log(`Msg recvd: ${msg}`)
+                const msgList = document.getElementById('messages')
+                const item = document.createElement('li')
+                item.textContent = msg
+                msgList.appendChild(item)
+            })
+
+
+        </script>
+        <title>Example One</title>
+    </header>
+    <body>
+        <h1>Chatting App</h1>
+        <input type="text" name="message" id="message"> 
+        <button onclick="sendMessage()">Send Message</button> <br>
+
+        <ul id="messages"></ul>
+    </body>
+</html>
