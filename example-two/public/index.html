@@ -1,0 +1,43 @@
+<html>
+    <header>
+        <script src="/socket.io/socket.io.js"></script>
+        <script>
+            const socket = io();
+
+            function sendMessage() {
+                var msg = document.getElementById('message').value;
+                console.log(msg)
+                socket.emit('chat-message', msg)
+                document.getElementById('message').value= '';
+                addMessageToElement('messagesSent', msg)
+            }
+
+            function addMessageToElement(elementId, msg) {
+                const msgList = document.getElementById(elementId)
+                const item = document.createElement('li')
+                item.textContent = msg
+                msgList.appendChild(item)
+            }
+
+            socket.on('chat-message', (msg)=> {
+                console.log(`Msg recvd: ${msg}`)
+                addMessageToElement('messagesRecieved', msg)
+            })
+
+
+
+
+        </script>
+        <title>Example Two</title>
+    </header>
+    <body>
+        <h1>Chatting App</h1>
+        <input type="text" name="message" id="message"> 
+        <button onclick="sendMessage()">Send Message</button> <br>
+
+        <h2>Send messages from me</h2>
+        <ul id="messagesSent"></ul>
+        <h2>Send received to me</h2>
+        <ul id="messagesRecieved"></ul>
+    </body>
+</html>

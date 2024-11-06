@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "ex1": "node-dev example-one\\index.js"
+    "ex1": "node-dev example-one\\index.js",
+    "ex2": "node-dev example-two\\index.js"
   },
   "keywords": [],
   "author": "",
