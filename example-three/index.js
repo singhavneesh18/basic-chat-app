@@ -18,7 +18,7 @@ io.on('connection', (socket) => {
         console.log("Message received :", data)
         connectionInfo
         .filter(con => (con.socket.id != socket.id && con.channelName === data.channelName))
-        .forEach(con => con.socket.emit('chat-message', data.message));
+        .forEach(con => con.socket.emit('chat-message', data));
     })
 
     socket.on('createConnection', data => {
