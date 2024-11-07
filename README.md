@@ -19,13 +19,16 @@ Channel chat, where one can chat to anyone joined in same channel but not in oth
 ![alt text](resources/example-three.png)
 
 # Example Four
-Channel chat, where one can chat to anyone joined in same channel but not in others
-Also, will be able to see peoples joined in current channel
+User will be able to see peoples joined in current channel <br>
+User can see time of message sent
+Notifications:
+System welcome message
+New user joined in current channel 
 
 
 # Example Five
 Will be allowed to switch channel in between & talk in another channel peoples & return back<br>
 <b>Note:</b> Messages will be lost
 
-# Example Five
+# Example Six
 Choose person and chat with him, one to one(select chat) or can select channel chat
